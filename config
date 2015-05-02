@@ -79,7 +79,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-# bindsym $mod+space focus mode_toggle
+bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -98,6 +98,15 @@ exec --no-startup-id ssh-add
 # shaief: blank screen:
 exec --no-startup-id xset dpms 300
 
+# shaief: lock screen:
+bindsym Control+$mod+l exec i3lock-fancy
+exec xautolock -time 15 -locker i3lock-fancy &
+
+# shaief: screenshots:
+bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/Pictures/screenshots/'
+
+# shaief: background:
+exec --no-startup-id feh --bg-fill ~/Pictures/6974204-black-desktop-background.jpg
 # shaief: volume:
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 3%-
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 3%+
@@ -163,7 +172,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-  status_command i3status
+  status_command i3status -c ~/.i3/i3status.conf
   font pango:DejaVu Sans Mono 10
   position	top
 }
