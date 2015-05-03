@@ -89,7 +89,7 @@ bindsym $mod+a focus parent
 
 # shaief:
 # exec setxkbmap -option grp:alt_shift_toggle "us,il" -option grp_led:caps
-exec setxkbmap grp:alt_shift_toggle "us,il" -option grp_led:caps
+exec --no-startup-id "setxkbmap us,il -option grp:alt_shift_toggle -option grp_led:caps"
 exec --no-startup-id nm-applet
 exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id dropbox start
