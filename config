@@ -99,8 +99,8 @@ exec --no-startup-id ssh-add
 exec --no-startup-id xset dpms 300
 
 # shaief: lock screen:
-bindsym Control+$mod+l exec i3lock-fancy
-exec xautolock -time 15 -locker i3lock-fancy &
+bindsym Control+$mod+l exec i3lock -c 000000
+exec xautolock -time 15 -locker i3lock &
 
 # shaief: screenshots:
 bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/Pictures/screenshots/'
